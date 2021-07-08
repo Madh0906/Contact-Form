@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='style.css' />
+</head>
+
+<body>
+    <div class="container-fluid logins-section">
+        <div class="login-cards2">
+            <div class="card text-center custom-card shadow-lg">
+                <div class="card-title">
+                    <h3>Contact Us</h3>
+                </div>
+
+                <div class="card-body custom-card2" id="custom-card2">
+
+                    <form id="myform" action='' onsubmit="return false">
+                        <script src="form.js"></script>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $("#but").click(function() {
+            var formData = $("form").serialize()
+            $("#seri").text(formData);
+            setCookie('name', formData, 30);
+            sendDatatoServer(formData);
+        });
+
+        function setCookie(key, value, expire) {
+            var expiration = new Date();
+            expiration.setTime(expiration.getTime() + (expire * 86400000));
+            document.cookie = key + "=" + value + ";expires=" + expiration.toGMTString() + ";path=/";
+        }
+
+        function sendDatatoServer(formdata) {
+            $.ajax({
+                type: "POST",
+                url: "server.php",
+                data: formdata,
+                datatype: 'html',
+                success: function(data) {
+                    alert("submitted successfully  "+data);
+                    console.log(data);
+                }
+            });
+
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+body {
+    background: #e6e6e6;
+}
+
+#button1 {
+    padding: 10px;
+    color: white;
+    width: 10rem;
+    background-color: #80b3ff;
+    border-radius: 20px;
+    border-width: 0px;
+    border: none;
+}
+#but{
+    padding: 10px;
+    color: white;
+    width: 15rem;
+    margin-left: 1rem;
+    background-color: #80b3ff;
+    border-radius: 20px;
+    border-width: 0px;
+    border: none;
+}
+
+.login-images {
+    width: 96px;
+    height: 96px;
+}
+
+
+.logins-section {
+    font-size: 25px;
+    font-style: bold;
+}
+
+.card-title {
+    border-bottom: 5px solid #e6f7ff;
+}
+
+.login-cards {
+    padding: 2%;
+    font-size: 15px;
+}
+
+.login-cards2 {
+    padding: 5%;
+    margin: 0;
+    /*    height: 50rem;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+}
+
+.custom-card {
+    height: 40rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #e6f7ff;
+    border-width: 5px;
+    /*    border-color: black;*/
+
+}
+
+.custom-card2 {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.custom-card2::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .custom-card {
+        width: 50rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .custom-card {
+        height: 35rem;
+    }
+}
